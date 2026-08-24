@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Clayfall</title>
+<style>
+  :root{
+    --bg:#0b0e14; --ink:#e6edf3; --dim:#8b97a8; --accent:#7cf9d0;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);overflow:hidden}
+  body{font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);
+       -webkit-user-select:none;user-select:none;touch-action:none}
+  canvas{display:block;cursor:crosshair}
+  #overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+           padding:24px;background:rgba(6,8,12,.78);backdrop-filter:blur(6px)}
+  #overlay[hidden]{display:none}
+  .panel{width:min(760px,100%);text-align:center}
+  h1{font-size:clamp(38px,9vw,76px);letter-spacing:.22em;margin:0 0 6px;color:var(--accent);
+     text-shadow:0 0 26px rgba(124,249,208,.35)}
+  h2{font-size:clamp(22px,4vw,32px);letter-spacing:.14em;margin:0 0 8px}
+  .sub{color:var(--dim);margin:0 0 26px}
+  .cards{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:8px 0 22px}
+  .card{flex:1 1 190px;max-width:230px;background:#131824;border:1px solid #263043;border-radius:12px;
+        padding:18px 16px;cursor:pointer;text-align:left;color:inherit;font:inherit;
+        transition:transform .12s,border-color .12s,background .12s}
+  .card:hover,.card:focus-visible{transform:translateY(-4px);border-color:var(--accent);background:#182031;outline:none}
+  .card .k{color:var(--accent);font-size:11px;letter-spacing:.18em}
+  .card .n{font-size:17px;margin:8px 0 6px;font-weight:700}
+  .card .d{color:var(--dim);font-size:13px}
+  .keys{color:var(--dim);font-size:13px;line-height:2}
+  .keys b{color:var(--ink);background:#1a2130;border:1px solid #2b3548;border-radius:5px;padding:2px 7px}
+  kbd{color:var(--ink);background:#1a2130;border:1px solid #2b3548;border-radius:5px;padding:2px 7px;font:inherit}
+  .btn{margin-top:8px;background:var(--accent);color:#04120d;border:0;border-radius:9px;
+       padding:13px 30px;font:700 15px/1 inherit;letter-spacing:.12em;cursor:pointer}
+  .btn:hover{filter:brightness(1.1)}
+  .stat{color:var(--dim);margin:14px 0 0}
+  .stat b{color:var(--accent)}
+</style>
+</head>
+<body>
+<canvas id="game"></canvas>
+<div id="overlay"></div>
+<script src="game.js"></script>
+</body>
+</html>
