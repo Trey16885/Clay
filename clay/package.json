@@ -1,0 +1,27 @@
+{
+  "name": "clay-agent",
+  "version": "0.1.0",
+  "description": "Clay \u2014 a terminal AI agent that reads, writes, searches and runs code in your workspace.",
+  "type": "module",
+  "bin": {
+    "clay": "./bin/clay.js"
+  },
+  "main": "./src/agent.js",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node bin/clay.js",
+    "check": "node --check bin/clay.js && for f in src/*.js; do node --check \"$f\"; done",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.122.0"
+  },
+  "license": "MIT"
+}
