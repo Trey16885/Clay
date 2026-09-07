@@ -1,3 +1,20 @@
+# Clay
+
+Two things live here.
+
+- **[`clay/`](clay/)** — Clay, a terminal AI agent. It reads, searches and edits
+  files in a workspace and runs commands, asking before it changes anything.
+  One dependency, no build step. See [clay/README.md](clay/README.md).
+- **Clayfall** — the browser game in this directory, described below.
+
+```sh
+cd clay && npm install
+export ANTHROPIC_API_KEY=sk-ant-...
+node bin/clay.js
+```
+
+---
+
 # Clayfall
 
 A top-down wave-survival arena shooter that runs in the browser. No build step, no
@@ -58,6 +75,7 @@ waves are where runs are actually won. Your best score is kept in `localStorage`
 
 ## Layout
 
+- `clay/` — the Clay agent (unrelated to the game)
 - `index.html` — page shell, overlay styling (menu, upgrade draft, pause, game over)
 - `game.js` — the whole game: loop, entities, AI, collisions, particles, HUD, audio
 
